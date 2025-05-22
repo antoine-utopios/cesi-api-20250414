@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: demo-ddos
+
+server:
+  port: 8080
+
+# Actuator
+
+
+# On choisi d'avoir en permanence les détails des métrics de santé de l'application
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  # A un certain endpoint (/actuator/health ici)
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+  # Cet indicateur de santé va rediriger vers les metrics de notre rate limiter
+  health:
+    ratelimiters:
+      enabled: true
+
+# Resilience4j
+
+
+resilience4j:
+  ratelimiter:
+    instances:
+
+      # Il va falloir définir un nom de "policy" pour ensuite pouvoir cibler les méthodes de service avec cette série de règles
+      basic-service:
+
+        # On défini combien de requêtes on va autoriser pendant une période de temps donnée
+        limit-for-period: 5
+
+        # On va choisir la durée de la période de temps ciblée par notre limite du nombre de requpetes
+        limit-refresh-period: 30s
+
+        # On peut aussi avoir une chaine de requêtes en attente une fois la limite dépassée, cette queue sera traitée en FiFo et aura un laps de temps prévu
+        timeout-duration: 2s
+
+        # ON ajoute le rate limiting aux metrics de notre application
+        register-health-indicator: true
