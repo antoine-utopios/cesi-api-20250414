@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.BruteForce", "Demo.BruteForce.csproj", "{30439801-F3E8-47BF-8AC6-0DAD99600EDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30439801-F3E8-47BF-8AC6-0DAD99600EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30439801-F3E8-47BF-8AC6-0DAD99600EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30439801-F3E8-47BF-8AC6-0DAD99600EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30439801-F3E8-47BF-8AC6-0DAD99600EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AB58E4A-8E19-4D15-9DB0-144FA35229E1}
+	EndGlobalSection
+EndGlobal
