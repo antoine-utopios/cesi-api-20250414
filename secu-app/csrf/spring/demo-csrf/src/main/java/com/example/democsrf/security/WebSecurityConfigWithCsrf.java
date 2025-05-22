@@ -1,0 +1,25 @@
+package com.example.democsrf.security;
+
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configurable
+@EnableWebSecurity
+@Profile({"default", "csrf"})
+public class WebSecurityConfigWithCsrf {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(Customizer.withDefaults())
+                .authorizeHttpRequests(request ->
+                        request.anyRequest().permitAll()
+                );
+
+                return http.build();
+    }
+}
