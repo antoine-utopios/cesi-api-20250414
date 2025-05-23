@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    @{
+		if (ViewBag.Message != null)
+		{
+			<div class="alert alert-success">
+				@* @Html.Raw(ViewBag.Message) *@
+
+                @ViewBag.RawMessage
+			</div>
+		}
+    }
+
+    <hr />
+    <form asp-action="PostMessage" method="post">
+        <div>
+			<label for="message">Enter your message:</label>
+			<input type="text" id="message" name="message" required />
+        </div>
+        <div>
+            <button>Envoyer</button>
+        </div>
+
+    </form>
+</div>
